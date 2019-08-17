@@ -7,6 +7,7 @@ const winCombos =
     [0,3,6] , [1,4,7] , [2,5,8], // column
     [0,4,8] , [2,4,6]            // diagonal
 ]
+var who = playerX;
 
 const cells = document.querySelectorAll(".cell");
 
@@ -29,8 +30,10 @@ function turnClick(square)
 {
     if (typeof origBoard[square.target.id] == 'number')
     {
-        turn(square.target.id, playerX);
-        if (!checkWin(origBoard, playerX) && !checkTie()) turn(pickSquare(), playerO);
+        turn(square.target.id, who);
+        checkWin(origBoard, who);
+        checkTie();
+        who = (who == playerX) ? playerO : playerX;
     }
 }
 
@@ -72,7 +75,7 @@ function gameOver(gameWon)
     {
         cells[i].removeEventListener('click', turnClick, false);
     }
-    declareWinner(gameWon.player == playerX ? "You Win!" : "You Lose!");
+    declareWinner(gameWon.player == playerX ? "Player X Wins!" : "Player O Wins!");
 }
 
 function pickSquare()
