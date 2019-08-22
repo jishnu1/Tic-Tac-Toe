@@ -3,52 +3,68 @@
     text-align: center;
     color: purple;
     font-family: "Comic Sans MS";
-    margin: 15px;
+    margin: 5px;
     text-shadow: 2px 2px 2px white;
 }
 
-td
-{
-    border: 3px solid black;
-    height: 100px;
-    width : 100px;
-    text-align: center;
-    vertical-align: middle;
-    font-family: "Comic Sans MS";
-    text-shadow: 2px 2px 2px black;
-    font-size: 70px;
-    cursor: pointer;
-}
-
-table
+.main
 {
     border-collapse: collapse;
     display: table;
     margin: auto;
+    height: 600px;
+    width : 600px;
 }
 
-table tr:first-child td
+.main td
+{
+    border: 4px solid black;
+}
+
+.square
+{
+    width: 200px;
+    height: 200px;
+}
+
+.square td
+{
+    background-color: lightgrey;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Comic Sans MS";
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.square tr td
+{
+    border: 0;
+}
+
+.main tr:first-child td
 {
     border-top: 0;
 }
-table tr:last-child td
+.main tr:last-child td
 {
     border-bottom: 0;
 }
-table tr td:first-child
+.main tr td:first-child
 {
     border-left: 0;
 }
-table tr td:last-child
+.main tr td:last-child
 {
     border-right: 0;
 }
 
 .turn
 {
-    width: 280px;
+    width: 580px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     box-shadow: 0 0 5px 5px black;
     text-shadow: 2px 2px 2px black;
     text-align: center;
@@ -61,10 +77,10 @@ table tr td:last-child
 
 .restart
 {
-    width: 300px;
+    width: 600px;
     margin: 0 auto;
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
     box-shadow: 0 0 5px 5px black;
     text-shadow: 2px 2px 2px black;
     text-align: center;
@@ -72,5 +88,5 @@ table tr td:last-child
     font-size: 20px;
     font-family: "Comic Sans MS";
     color: white;
-    background-color: yellowgreen;
+    background-color: green;
 }

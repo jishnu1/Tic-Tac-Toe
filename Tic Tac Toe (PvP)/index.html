@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tic-Tac-Toe (PvE)</title>
+    <title>Tic-Tac-Toe (PvP)</title>
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/essenstial-ultimate-ui/64/tic_tac_toe-512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-color: gray">
     
-    <h1 class="title">Tic-Tac-Toe</h1>
+    <h1 class="title">Tic-Tac-Toe (PvP)</h1>
     
     <table>
         <tr>
@@ -30,10 +30,9 @@
         </tr>
     </table>
     
-    <div class="endgame">
-        <div class="text"></div>
-        <button onClick="startGame()">Restart</button>
-    </div>
+    <div class="turn"> Turn X </div>
+
+    <button class="restart" onClick="startGame()"></button>
     
     <script src="script.js"></script>
 

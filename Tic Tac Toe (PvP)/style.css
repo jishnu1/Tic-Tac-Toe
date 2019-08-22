@@ -3,17 +3,19 @@
     text-align: center;
     color: purple;
     font-family: "Comic Sans MS";
-    margin: 30px;
+    margin: 15px;
+    text-shadow: 2px 2px 2px white;
 }
 
 td
 {
-    border: 2px solid black;
+    border: 3px solid black;
     height: 100px;
     width : 100px;
     text-align: center;
     vertical-align: middle;
     font-family: "Comic Sans MS";
+    text-shadow: 2px 2px 2px black;
     font-size: 70px;
     cursor: pointer;
 }
@@ -42,21 +44,33 @@ table tr td:last-child
     border-right: 0;
 }
 
-.endgame
+.turn
 {
-    display: none;
-    opacity: 0.8;
-    width: 200px;
-    top: 200px;
-    background-color: orange;
-    position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    width: 280px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 5px 5px black;
+    text-shadow: 2px 2px 2px black;
     text-align: center;
-    border-radius: 30px;
-    color: purple; 
-    font-size: 25px;
-    opacity: 50%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: white;
+    background-color: orangered;
+}
+
+.restart
+{
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    box-shadow: 0 0 5px 5px black;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: white;
+    background-color: yellowgreen;
 }

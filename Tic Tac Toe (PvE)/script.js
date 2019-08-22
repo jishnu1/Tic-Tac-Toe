@@ -1,12 +1,11 @@
-var origBoard;
-const playerX = 'X';
-const playerO = 'O';
+var board;
 const winCombos =
 [
     [0,1,2] , [3,4,5] , [6,7,8], // row
     [0,3,6] , [1,4,7] , [2,5,8], // column
     [0,4,8] , [2,4,6]            // diagonal
 ]
+var player = 'X';
 
 const cells = document.querySelectorAll(".cell");
 
@@ -14,76 +13,85 @@ startGame();
 
 function startGame()
 {
-    document.querySelector(".endgame").style.display = "none";
-    origBoard = Array.from(Array(9).keys());
+    document.querySelector(".restart").style.display = "none";
+    player = 'X';
+
+    board = Array.from(Array(9).keys());
 
     for (var i=0; i<cells.length; i++)
     {
         cells[i].innerText = '';
         cells[i].style.removeProperty('background-color');
-        cells[i].addEventListener('click', turnClick, false);
+        cells[i].addEventListener('click', click, false);
     }
 }
 
-function turnClick(square)
+function click(square)
 {
-    if (typeof origBoard[square.target.id] == 'number')
+    var ID = square.target.id;
+    
+    if (typeof board[ID] == 'number')
     {
-        turn(square.target.id, playerX);
-        if (!checkWin(origBoard, playerX) && !checkTie()) turn(pickSquare(), playerO);
-    }
-}
+        afterClick(ID, player);
 
-function turn(squareId, player)
-{
-    origBoard[squareId] = player;
-    document.getElementById(squareId).innerText = player;
-
-    if (player == playerX) document.getElementById(squareId).style.color = "red";
-    else document.getElementById(squareId).style.color = "blue";
-
-    let gameWon = checkWin(origBoard, player);
-    if (gameWon) gameOver(gameWon);
-}
-
-function checkWin(board, player)
-{
-    let plays = board.reduce((a, e, i) =>
-        (e === player) ? a.concat(i) : a, []);
-    let gameWon = null;
-    for (let [index, win] of winCombos.entries())
-    {
-        if (win.every(elem => plays.indexOf(elem) > -1))
+        if (!checkWin() && !checkTie())
         {
-            gameWon = {index: index, player: player};
-            break;
+            var index = Math.floor(Math.random()*emptySquares().length);
+            afterClick(emptySquares()[index], player);
         }
     }
-    return gameWon;
 }
 
-function gameOver(gameWon)
+function afterClick(ID)
 {
-    for (let index of winCombos[gameWon.index])
+        board[ID] = player;
+        document.getElementById(ID).innerText = player;
+
+        if (player == 'X') document.getElementById(ID).style.color = "red";
+        else document.getElementById(ID).style.color = "blue";
+        
+        if (!checkWin() && !checkTie())
+        {
+            if (player == 'X')
+            {
+                player = 'O';
+            }
+            else
+            {
+                player = 'X';
+            }
+        }
+}
+
+function checkWin()
+{
+    let plays = board.reduce( (a, e, i) => (e === player) ? a.concat(i) : a,  [] );
+    for (let [combo, squares] of winCombos.entries())
     {
-        document.getElementById(index).style.backgroundColor = "green";
+        if (squares.every(elem => plays.indexOf(elem) > -1))
+        {
+            gameOver(combo);
+            return true;
+        }
+    }
+}
+
+function gameOver(combo)
+{
+    for (let index of winCombos[combo])
+    {
+        document.getElementById(index).style.backgroundColor = "yellowgreen";
     }
     for (var i=0; i<cells.length; i++)
     {
-        cells[i].removeEventListener('click', turnClick, false);
+        cells[i].removeEventListener('click', click, false);
     }
-    declareWinner(gameWon.player == playerX ? "You Win!" : "You Lose!");
-}
-
-function pickSquare()
-{
-    var index = Math.floor(Math.random()*emptySquares().length);
-    return emptySquares()[index];
+    declareWinner(player == 'X' ? "Player X Wins! \n Click to Restart!" : "Player O Wins! \n Click to Restart!");
 }
 
 function emptySquares()
 {
-    return origBoard.filter(s => typeof s == 'number');
+    return board.filter(square => typeof square == 'number');
 }
 
 function checkTie()
@@ -92,10 +100,10 @@ function checkTie()
     {
         for (var i=0; i<cells.length; i++)
         {
-            cells[i].style.backgroundColor = "green";
-            cells[i].removeEventListener('click', turnClick, false); 
+            cells[i].style.backgroundColor = "yellowgreen";
+            cells[i].removeEventListener('click', click, false); 
         }
-        declareWinner("Tie Game!")
+        declareWinner("Tie Game! \n Click to Restart")
         return true;
     }
     return false;
@@ -103,6 +111,6 @@ function checkTie()
 
 function declareWinner(text)
 {
-    document.querySelector(".endgame").style.display = "block";
-    document.querySelector(".endgame .text").innerText = text;
+    document.querySelector(".restart").style.display = "block";
+    document.querySelector(".restart").innerText = text;
 }
