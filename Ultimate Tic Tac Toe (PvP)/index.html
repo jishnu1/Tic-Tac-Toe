@@ -6,6 +6,8 @@
     <title>Ultimate Tic-Tac-Toe (PvP)</title>
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/essenstial-ultimate-ui/64/tic_tac_toe-512.png">
     <link rel="stylesheet" href="style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body style="background-color: gray">
@@ -13,190 +15,192 @@
     <h1 class="title">Ultimate Tic-Tac-Toe (PvP)</h1>
     
     <table class="main">
-        <tr class="1">
+
+        <tr>
+            <td class="0">
+                <table class="small 0 live">
+                    <tr>
+                        <td class="0"></td>
+                        <td class="1"></td>
+                        <td class="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
+                    </tr>
+                </table>
+            </td>
             <td class="1">
-                <table class="square col-1 row-1">
-                    <tr class="1">
+                <table class="small 1 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
-                        <td class="3"></td>
                     </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
                     </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
                     </tr>
                 </table>
             </td>
             <td class="2">
-                <table class="square col-2 row-1">
-                    <tr class="1">
+                <table class="small 2 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
-                        <td class="3"></td>
                     </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
                     </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="3">
-                <table class="square col-3 row-1">
-                    <tr class="1">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <tr class="2">
-            <td class="1">
-                <table class="square col-1 row-2">
-                    <tr class="1">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="2">
-                <table class="square col-2 row-2">
-                    <tr class="1">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                </table>
-            </td>
+
+        <tr>
             <td class="3">
-                <table class="square col-3 row-2">
-                    <tr class="1">
+                <table class="small 3 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
-                        <td class="3"></td>
                     </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
                     </tr>
-                    <tr class="3">
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="4">
+                <table class="small 4 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
+                    </tr>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="5">
+                <table class="small 5 live">
+                    <tr>
+                        <td class="0"></td>
+                        <td class="1"></td>
+                        <td class="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <tr class="3">
-            <td class="1">
-                <table class="square col-1 row-3">
-                    <tr class="1">
+
+        <tr>
+            <td class="6">
+                <table class="small 6 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
-                        <td class="3"></td>
                     </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
                     </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                </table>
-            </td>
-            <td class="2">
-                <table class="square col-2 row-3">
-                    <tr class="1">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
-                    </tr>
-                    <tr class="3">
-                        <td class="1"></td>
-                        <td class="2"></td>
-                        <td class="3"></td>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
                     </tr>
                 </table>
             </td>
-            <td class="3">
-                <table class="square col-3 row-3">
-                    <tr class="1">
+            <td class="7">
+                <table class="small 7 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
-                        <td class="3"></td>
                     </tr>
-                    <tr class="2">
-                        <td class="1"></td>
-                        <td class="2"></td>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
                     </tr>
-                    <tr class="3">
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="8">
+                <table class="small 8 live">
+                    <tr>
+                        <td class="0"></td>
                         <td class="1"></td>
                         <td class="2"></td>
+                    </tr>
+                    <tr>
                         <td class="3"></td>
+                        <td class="4"></td>
+                        <td class="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="6"></td>
+                        <td class="7"></td>
+                        <td class="8"></td>
                     </tr>
                 </table>
             </td>
         </tr>
+
     </table>
     
     <div class="turn"> Turn X </div>
     
     <button class="restart" onClick="startGame()"> Click to Restart! </button>
-
-    <!-- <script src="script.js"></script> -->
 
 </body>
 
