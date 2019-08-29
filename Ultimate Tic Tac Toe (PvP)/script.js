@@ -23,8 +23,8 @@ function func()
     
     $(".live").removeClass("live");
     
-    bigIndex = $(this).parents().eq(3).attr("class");
-    smallIndex = $(this).attr("class");
+    let bigIndex = $(this).parents().eq(3).attr("class");
+    let smallIndex = $(this).attr("class");
 
     mainBoard[bigIndex][smallIndex] = player;
 
@@ -45,7 +45,7 @@ function func()
         }
     }
     
-    var div = $("<div>").innerHTML = player;
+    let div = $("<div>").innerHTML = player;
     $(this).html(div);
     $(this).addClass(player);
     $(this).unbind("click");
@@ -127,7 +127,7 @@ function checkWin(board)
 
 function checkTie(board)
 {
-    emptySquares = board.filter(square => typeof square == 'number');
+    let emptySquares = board.filter(square => typeof square == 'number');
 
     if (emptySquares.length == 0)
     {
