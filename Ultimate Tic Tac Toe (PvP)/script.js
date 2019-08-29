@@ -90,8 +90,6 @@ function func()
 
 function startGame()
 {
-    console.log("start");
-
     summaryBoard = Array.from(Array(9).keys());
     mainBoard    = [];
     for (var i=0; i<9; i++)
