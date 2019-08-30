@@ -1,0 +1,135 @@
+.title
+{
+    text-align: center;
+    color: purple;
+    font-family: "Comic Sans MS";
+    margin: 5px;
+    text-shadow: 2px 2px 2px white;
+}
+
+.main
+{
+    border-collapse: collapse;
+    display: table;
+    margin: auto;
+    height: 600px;
+    width : 600px;
+}
+
+.main td
+{
+    border: 4px solid black;
+}
+
+.small
+{
+    width: 200px;
+    height: 200px;
+}
+
+.small td
+{
+    background-color: lightgrey;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Comic Sans MS";
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.small tr td
+{
+    border: 0;
+    padding: 0;
+    width: 33%;
+    height: 33%;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.main tr:first-child td
+{
+    border-top: 0;
+}
+.main tr:last-child td
+{
+    border-bottom: 0;
+}
+.main tr td:first-child
+{
+    border-left: 0;
+}
+.main tr td:last-child
+{
+    border-right: 0;
+}
+
+.live
+{
+    background-color: orange;
+}
+
+.X
+{
+    color: red;
+}
+
+.O
+{
+    color: blue;
+}
+
+.row
+{
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.row .turn
+{
+    display: inline-block;
+    margin: 0px;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: white;
+    background-color: orangered;
+    box-shadow: 0 0 5px 5px black;
+    text-shadow: 2px 2px 2px black;
+}
+
+.row button
+{
+    display: inline-block;
+    margin: 0px 15px;
+    width: 160px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: white;
+    background-color: purple;
+    box-shadow: 0 0 5px 5px black;
+    text-shadow: 2px 2px 2px black;
+}
+
+.restart
+{
+    width: 600px;
+    margin: 0 auto;
+    display: none;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 5px black;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: white;
+    background-color: greenyellow;
+    cursor: pointer;
+}

@@ -41,7 +41,7 @@ function func()
         else if ( checkTie(mainBoard[bigIndex]) )
         {
             summaryBoard[bigIndex] = "tie";
-            $(".small" + "." + bigIndex + " td").css("backgroundColor", "greenyellow");
+            $(".small" + "." + bigIndex + " td").css("backgroundColor", "lightgreen");
         }
     }
     
