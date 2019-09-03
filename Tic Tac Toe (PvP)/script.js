@@ -75,9 +75,19 @@ function checkWin()
 
 function gameOver(combo)
 {
-    for (let index of winCombos[combo])
+    if (player == 'X')
     {
-        document.getElementById(index).style.backgroundColor = "yellowgreen";
+        for (let index of winCombos[combo])
+        {
+            document.getElementById(index).style.backgroundColor = "pink";
+        }
+    }
+    else
+    {
+        for (let index of winCombos[combo])
+        {
+            document.getElementById(index).style.backgroundColor = "lightblue";
+        }
     }
     for (var i=0; i<cells.length; i++)
     {
@@ -97,7 +107,7 @@ function checkTie()
     {
         for (var i=0; i<cells.length; i++)
         {
-            cells[i].style.backgroundColor = "yellowgreen";
+            cells[i].style.backgroundColor = "lightgreen";
             cells[i].removeEventListener('click', click, false); 
         }
         declareWinner("Tie Game! \n Click to Restart")
